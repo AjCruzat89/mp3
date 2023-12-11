@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Roboto+Slab&family=Roboto:wght@100;400&display=swap');
+
+
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('./cinammoroll.png');
+  background-size: 100%;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif !important;
+}
+
+#player {
+  width: 400px;
+  min-width: 400px;
+  text-align: center;
+  border: 3px solid rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 500px) {
+  #player {
+    min-height: 100vh;
+    width: 100%;
+    min-width: 100%;
+  }
+
+  body{
+    height: unset;
+    padding: unset;
+  }
+}
+
+#songImage {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 50%;
+  animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+#songTitle {
+  margin-top: 10px;
+  color: #333;
+  font-weight: bold;
+}
+
+#progressBarContainer {
+  width: 100%;
+  margin: 20px auto;
+  height: 10px;
+  background-color: rgba(0, 0, 0, 0.2);;
+  border-radius: 10px;
+  position: relative;
+}
+
+#progressBar {
+  height: 100%;
+  width: 0;
+  background-color: #8CD2F4;
+  border-radius: 10px;
+}
+
+#audioPlayer {
+  display: none;
+}
+
+#controls button {
+  background-color: #8CD2F4;
+  color: #fff;
+  border: 3px solid rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  padding: 16px 23px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+@media (max-width: 360px) {
+  #controls button{
+    padding: 8px 15px;
+  }
+}
+
+#controls button:hover {
+  filter: brightness(0.7);
+}
+
+#songList {
+  list-style: none;
+}
+
+#songList li {
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid #8CD2F4;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+}
+
+#songList li::after{
+  position: absolute;
+  content: '';
+  top: -30px;
+  right: -20px;
+  background-image: url('./cinnamoroll.gif');
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+  background-size: 100%;
+  background-position: center;  
+  width: 50px;
+  height: 50px;
+}
+
+@media (max-width: 500px) {
+  #songList li::after{
+    right: -10px;
+  }
+}
+
+#songList li:hover{
+  background-color: white;
+}
+
+#showList i , #showList h5{
+  font-size: 22px;
+}
+
+#showList:hover{
+  color: #2980b9;
+  cursor: pointer;
+}
+
+#volumeControl{
+  color: #8CD2F4;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none; 
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  height: 15px;
+  border-radius: 16px;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  background: rgba(0, 0, 0, 0.2);
+  height: 15px;
+  border-radius: 16px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none; 
+  height: 15px;
+  width: 15px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 2px solid #8CD2F4;
+  box-shadow: -407px 0 0 400px #8CD2F4;
+}
+
+.profilePicture{
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  object-fit: cover;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+@media (max-width:500px) {
+  .profilePicture{
+    width: 50px;
+    height: 50px;
+  }
+
+  #profileDropdown{
+    top: 60px !important;
+  }
+}
+
+.profile{
+  position: relative;
+}
+
+#profileDropdown{
+  position: absolute;
+  top: 90px;
+  background-color: white;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  border-radius: 15px;
+  width: 100%;
+}
+

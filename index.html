@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="p-4 rounded" id="player">
+        <div class="d-flex justify-content-between align-items-center profile"> 
+            <h3 class="pt-2">Playlist Name</h3>   
+            <img src="./MN_Father_Day_Coupon_Printable_Yoshi_Artwork.png" alt="" class="profilePicture">
+            <div class="d-none flex-column justify-content-start align-items-start p-4 gap-2" id="profileDropdown">
+                <a href="#">Home</a>
+                <a href="#">Playlists</a>
+                <a href="#">Logout</a>
+            </div>
+        </div>
+        <img id="songImage" src="" alt="Song Image">
+        <h2 class="mt-5" id="songTitle">Song Title</h2>
+        <div id="progressBarContainer" class="progress">
+            <div id="progressBar" class="progress-bar" onclick="seek(event)"></div>
+        </div>
+        <audio id="audioPlayer">
+            Your browser does not support the audio element.
+        </audio>
+        <div id="controls" class="d-flex justify-content-center flex-wrap">
+            <button id="shuffleRepeatButton" class="btn btn-light"><i class="fas fa-random"></i></button>
+            <button id="prevButton" class="btn btn-light"><i class="fas fa-step-backward"></i></button>
+            <button id="playPauseButton" class="btn btn-light"><i class="fas fa-play"></i></button>
+            <button id="nextButton" class="btn btn-light"><i class="fas fa-step-forward"></i></button>
+            <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1"
+                onchange="adjustVolume(this.value)" class="range mt-3">
+        </div>
+
+        <div class="d-flex flex-row align-items-center mt-3 gap-2" id="showList">
+            <i class="fas fa-chevron-down pb-2"></i>
+            <h5>Show List</h5>
+        </div>
+
+
+        <ul id="songList" class="list-group d-none">
+            <li class="song list-group-item" data-src="Bon Jovi - It's My Life.mp3" data-img="josh.jpg">Bon Jovi - It's
+                My Life</li>
+            <li class="song list-group-item" data-src="Bon Jovi - Livin' On A Prayer.mp3" data-img="download.jpg">Bon
+                Jovi - Livin' On A Prayer.mp3</li>
+        </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script src="profile.js"></script>
+</body>
+
+</html>
